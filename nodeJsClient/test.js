@@ -3,12 +3,12 @@ var client  = arDrone.createClient();
 
 
 client.takeoff();
+client.land();
 
 client
   .after(5000, function() {
-    this.clockwise(0.5);
-  })
-  .after(3000, function() {
     this.stop();
-    this.land();
-  });
+  })
+  .after(8000, function() {
+    this.clockwise(0.03214285714); //need to test!
+  })
